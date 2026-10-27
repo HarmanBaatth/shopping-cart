@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>shopEase | Everyday Shopping</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a class="logo" href="#">shopEase<span>.</span></a>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#cart">My Cart (<span id="cart-count">0</span>)</a>
+    </nav>
+  </header>
+
+
+  <main>
+    <section id="products" class="section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">OUR COLLECTION</p>
+          <h2>Shop your favourites</h2>
+        </div>
+        <span id="product-count"></span>
+      </div>
+
+      <div class="filters">
+        <input id="search" type="search" placeholder="Search products...">
+
+        <select id="category">
+          <option value="All">All categories</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Footwear">Footwear</option>
+        </select>
+
+        <select id="sort">
+          <option value="default">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div id="product-list" class="product-grid"></div>
+    </section>
+
+    <section id="cart" class="section cart-section">
+      <p class="eyebrow">YOUR SELECTION</p>
+      <h2>Shopping cart</h2>
+
+      <div class="cart-layout">
+        <div id="cart-items" class="cart-items"></div>
+
+        <aside class="summary">
+          <h3>Order summary</h3>
+          <div class="summary-line">
+            <span>Subtotal</span><span id="subtotal">₹0</span>
+          </div>
+          <div class="summary-line">
+            <span>Discount</span><span id="discount">₹0</span>
+          </div>
+          <div class="summary-line">
+            <span>Delivery</span><span id="delivery">₹0</span>
+          </div>
+
+          <div class="coupon">
+            <input id="coupon-code" placeholder="Coupon code">
+            <button id="apply-coupon" class="button secondary">Apply</button>
+          </div>
+          <p id="coupon-message" class="message"></p>
+
+          <div class="summary-line total-line">
+            <strong>Total</strong><strong id="total">₹0</strong>
+          </div>
+          <button id="checkout-button" class="button full-width">
+            Proceed to Checkout
+          </button>
+        </aside>
+      </div>
+    </section>
+
+    <section id="checkout" class="section checkout-section hidden">
+      <p class="eyebrow">ALMOST THERE</p>
+      <h2>Checkout</h2>
+      <form id="checkout-form">
+        <label for="customer-name">Full name</label>
+        <input id="customer-name" required placeholder="Enter your name">
+
+        <label for="customer-email">Email address</label>
+        <input id="customer-email" type="email" required placeholder="you@example.com">
+
+        <label for="customer-address">Delivery address</label>
+        <textarea id="customer-address" required placeholder="Enter your address"></textarea>
+
+        <button class="button" type="submit">Place Order</button>
+      </form>
+      <p id="order-success" class="success"></p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="logo" href="#">shopEase<span>.</span></a>
+    <p>CE-1 Mini Project · A simple shopping cart demo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
